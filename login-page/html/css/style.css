@@ -1,0 +1,17 @@
+table, th, td {
+
+    border:1px solid black;
+    border-collapse: collapse;
+  }
+
+thead th{
+    padding: 5px 15px 5px 15px;
+}
+
+tbody td{
+    padding: 0 10px 0 10px;
+}
+
+table{
+    border-spacing: 130px;
+}

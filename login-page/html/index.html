@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>登入</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="CSS/style.css">
+    </head>
+
+    <body>
+
+        <form action="_" method="POST">
+            <label for="username">username: </label>
+            <input type="text" id="username " name="username"><br>
+            <label for="password">password: </label>
+            <input type="password" id="password" name="password"><br><br>
+            <input type="submit" value="Submit">
+        </form>
+
+        <br>
+        <!-- table 用作輸出 資料庫會員資料的模板 -->
+        <table>
+            <thead>
+                <tr>
+                    <th>USERNAME</th>
+                    <th>PASSWORD</th>
+                    <th>編輯功能</th>
+                    <th>移除功能</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Derrick Yam</td>
+                    <td>11</td>
+                    <td>編輯</td>
+                    <td>刪除</td>
+                </tr>
+            </tbody>
+            <tr></tr>
+            <tfoot>
+                <!-- <tr>
+                    <td></td>
+                    <td>26</td>
+                </tr> -->
+            </tfoot>
+        </table>
+    </body>
+</html>
