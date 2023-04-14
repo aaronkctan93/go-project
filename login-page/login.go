@@ -81,7 +81,7 @@ func main() {
 
 	mux.GET("/", index)
 
-	mux.ServeFiles("/css/*filepath", http.Dir("public/css"))
+	mux.ServeFiles("/css/*filepath", http.Dir("html/css"))
 
 	server := http.Server{
 		Addr:    "localhost:8080",
