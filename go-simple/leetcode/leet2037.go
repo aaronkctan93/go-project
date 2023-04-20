@@ -5,38 +5,55 @@ import "fmt"
 func main() {
 
 	// nums := []int{5, 7, 1, 10, 2}
-	students := []int{2, 7, 4}
-	seats := []int{3, 1, 5}
+	// Q2 : [4,1,5,9]
+	// Q2 : [1,3,2,6]
+	students := []int{1, 3, 2, 6}
+	seats := []int{4, 1, 5, 9}
+
+	fmt.Println(minMovesToSeat(seats, students))
+}
+
+func minMovesToSeat(seats []int, students []int) int {
 	countMove := 0
 	checkIsSmallest := 0
 	recordPosition := 0
-	distance := 0
+	distance := make([]int, len(seats))
 
 	for _, student := range students {
 		for k, seat := range seats {
-			distance = student - seat
-			if distance < 0 {
-				distance *= -1
-			}
-			if k == 1 {
-				checkIsSmallest = distance
-			} else {
-				if seat != -1 && checkIsSmallest > distance {
-					checkIsSmallest = distance
-					recordPosition = k
-				}
-			}
-		}
-		fmt.Println(seats)
-		if seats[recordPosition] != -1 {
-			seats[recordPosition] = -1
-			// fmt.Println(recordPosition)
-		}
+			if seat != -1 {
 
+				distance[k] = student - seat
+				if distance[k] < 0 {
+					distance[k] *= -1
+				}
+
+				if checkIsSmallest == 0 {
+					checkIsSmallest = distance[k]
+					recordPosition = k
+				} else {
+					if checkIsSmallest > distance[k] {
+						checkIsSmallest = distance[k]
+						recordPosition = k
+					} else if checkIsSmallest == distance[k] {
+						// fmt.Println("SAME")
+						if recordPosition < k {
+							recordPosition = k
+						}
+					}
+
+				}
+
+			}
+		}
+		seats[recordPosition] = -1
+		fmt.Println(checkIsSmallest)
 		countMove += checkIsSmallest
+		checkIsSmallest = 0
+
 	}
-	fmt.Println(countMove)
-	// fmt.Println(findBiggest(students, seats))
+
+	return countMove
 }
 
 /*
