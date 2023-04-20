@@ -26,3 +26,5 @@ func main() {
 	// fmt.Println(strConvert2)
 	// fmt.Println(isTrue)
 }
+
+// https://leetcode.com/problems/check-if-two-string-arrays-are-equivalent/

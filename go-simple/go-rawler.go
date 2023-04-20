@@ -3,12 +3,16 @@ package main
 import (
 	"fmt"
 	"os"
+
 	// _ "fmt"
 
 	"github.com/gocolly/colly"
 )
 
 func main() {
+	// 建立 名為 ex.txt 檔案
+	// https://studygolang.com/articles/14170
+	// ^^^ 文件使用範例 ^^^
 	f, err := os.Create("ex.txt")
 	defer f.Close()
 
@@ -36,3 +40,12 @@ func checkErr(err error) {
 		panic(err)
 	}
 }
+
+/*
+
+_token: pthtewPyAUbof9uHMFWwjukD98X6wOanz9eMDXbJ
+_token: pthtewPyAUbof9uHMFWwjukD98X6wOanz9eMDXbJ
+account: aaronkctan93
+password: Ithmm620213
+
+*/
